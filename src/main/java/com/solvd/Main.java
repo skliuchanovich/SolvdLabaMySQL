@@ -1,21 +1,23 @@
 package com.solvd;
 
-import com.solvd.dao.jdbc.AnimalDAO;
-import com.solvd.dao.jdbc.CatDAO;
-import com.solvd.dao.jdbc.HealthDAO;
-import com.solvd.model.Animal;
-import com.solvd.model.Cat;
-import com.solvd.model.Health;
+import static com.solvd.ValidatorXML.validateXML;
+import static com.solvd.XMLParser.parseXML;
 
 public class Main {
 
     public static void main(String[] args) {
-        HealthDAO healthDAO = new HealthDAO();
-        System.out.println(healthDAO.getEntityByID(1));
-        AnimalDAO animalDAO = new AnimalDAO();
-        System.out.println(animalDAO.getEntities());
-        CatDAO catDAO = new CatDAO();
-        System.out.println(catDAO.getEntityByID(1));
+
+        String xmlPath = "src/main/resources/animals.xml";
+        String xsdPath = "src/main/resources/animals.xsd";
+
+        if (validateXML(xmlPath, xsdPath)) {
+            System.out.println("XML is valid against the provided XSD schema.");
+        } else {
+            System.out.println("XML validation failed.");
+        }
+        parseXML(xmlPath);
 
     }
+
+
 }

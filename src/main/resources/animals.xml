@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animals>
+    <Animal>
+        <Id>1</Id>
+        <Name>Simba</Name>
+        <Color>Golden</Color>
+        <Age>3</Age>
+
+        <Cat>
+            <Id>1</Id>
+            <Breed>Maine Coon</Breed>
+            <AnimalID>1</AnimalID>
+        </Cat>
+
+        <Health>
+            <Id>1</Id>
+            <CheckUpDate>2024-01-15</CheckUpDate>
+            <HealthStatus>Healthy</HealthStatus>
+            <AnimalID>1</AnimalID>
+        </Health>
+
+        <Diet>
+            <Id>1</Id>
+            <FeedingSchedule>Twice a day</FeedingSchedule>
+            <AnimalID>1</AnimalID>
+        </Diet>
+
+        <Owner>
+            <Id>1</Id>
+            <Name>John Doe</Name>
+            <ContactInfo>john.doe@example.com</ContactInfo>
+        </Owner>
+    </Animal>
+
+    <Animal>
+        <Id>2</Id>
+        <Name>Luna</Name>
+        <Color>Black</Color>
+        <Age>2</Age>
+
+        <Cat>
+            <Id>2</Id>
+            <Breed>Persian</Breed>
+            <AnimalID>2</AnimalID>
+        </Cat>
+
+        <Health>
+            <Id>2</Id>
+            <CheckUpDate>2023-12-20</CheckUpDate>
+            <HealthStatus>Vaccinated</HealthStatus>
+            <AnimalID>2</AnimalID>
+        </Health>
+
+        <Diet>
+            <Id>2</Id>
+            <FeedingSchedule>Once a day</FeedingSchedule>
+            <AnimalID>2</AnimalID>
+        </Diet>
+
+        <Owner>
+            <Id>2</Id>
+            <Name>Emily Smith</Name>
+            <ContactInfo>emily.smith@example.com</ContactInfo>
+        </Owner>
+    </Animal>
+</Animals>

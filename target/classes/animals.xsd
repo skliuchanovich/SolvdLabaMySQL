@@ -1,0 +1,55 @@
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Animals">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Animal" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:byte" name="Id"/>
+                            <xs:element type="xs:string" name="Name"/>
+                            <xs:element type="xs:string" name="Color"/>
+                            <xs:element type="xs:byte" name="Age"/>
+                            <xs:element name="Cat">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:byte" name="Id"/>
+                                        <xs:element type="xs:string" name="Breed"/>
+                                        <xs:element type="xs:byte" name="AnimalID"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Health">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:byte" name="Id"/>
+                                        <xs:element type="xs:date" name="CheckUpDate"/>
+                                        <xs:element type="xs:string" name="HealthStatus"/>
+                                        <xs:element type="xs:byte" name="AnimalID"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Diet">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:byte" name="Id"/>
+                                        <xs:element type="xs:string" name="FeedingSchedule"/>
+                                        <xs:element type="xs:byte" name="AnimalID"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Owner">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:byte" name="Id"/>
+                                        <xs:element type="xs:string" name="Name"/>
+                                        <xs:element type="xs:string" name="ContactInfo"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
