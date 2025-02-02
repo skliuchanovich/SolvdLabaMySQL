@@ -1,22 +1,28 @@
 package com.solvd;
 
-import static com.solvd.ValidatorXML.validateXML;
-import static com.solvd.XMLParser.parseXML;
+import com.solvd.model.Animal;
+import com.solvd.model.Animals;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
+
+import java.io.File;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String xmlPath = "src/main/resources/animals.xml";
-        String xsdPath = "src/main/resources/animals.xsd";
-
-        if (validateXML(xmlPath, xsdPath)) {
-            System.out.println("XML is valid against the provided XSD schema.");
-        } else {
-            System.out.println("XML validation failed.");
+        try {
+            JAXBContext context = JAXBContext.newInstance(Animals.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            File xmlFile = new File("src/main/resources/animals.xml");
+            Animals animalsWrapper = (Animals) unmarshaller.unmarshal(xmlFile);
+            List<Animal> animals = animalsWrapper.getAnimals();
+            animals.forEach(animal -> System.out.println(animal));
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
-        parseXML(xmlPath);
-
     }
 
 
