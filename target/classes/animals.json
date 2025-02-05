@@ -1,0 +1,58 @@
+{
+    "Animal": [
+      {
+        "Id": 1,
+        "Name": "Simba",
+        "Color": "Golden",
+        "Age": 3,
+        "Cat": {
+          "Id": 1,
+          "Breed": "Maine Coon",
+          "AnimalID": 1
+        },
+        "Health": {
+          "Id": 1,
+          "CheckUpDate": "2024-01-15",
+          "HealthStatus": "Healthy",
+          "AnimalID": 1
+        },
+        "Diet": {
+          "Id": 1,
+          "FeedingSchedule": "Twice a day",
+          "AnimalID": 1
+        },
+        "Owner": {
+          "Id": 1,
+          "Name": "John Doe",
+          "ContactInfo": "john.doe@example.com"
+        }
+      },
+      {
+        "Id": 2,
+        "Name": "Luna",
+        "Color": "Black",
+        "Age": 2,
+        "Cat": {
+          "Id": 2,
+          "Breed": "Persian",
+          "AnimalID": 2
+        },
+        "Health": {
+          "Id": 2,
+          "CheckUpDate": "2023-12-20",
+          "HealthStatus": "Vaccinated",
+          "AnimalID": 2
+        },
+        "Diet": {
+          "Id": 2,
+          "FeedingSchedule": "Once a day",
+          "AnimalID": 2
+        },
+        "Owner": {
+          "Id": 2,
+          "Name": "Emily Smith",
+          "ContactInfo": "emily.smith@example.com"
+        }
+      }
+    ]
+  }

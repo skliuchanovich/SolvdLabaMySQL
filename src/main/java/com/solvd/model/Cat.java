@@ -1,29 +1,39 @@
 package com.solvd.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlRootElement(name = "Cat")
-@XmlType(propOrder = {"breed", "animalID"})
 public class Cat {
 
+    @JsonProperty("Id")
+    private int id;
+
+    @JsonProperty("Breed")
     private String breed;
+
+    @JsonProperty("AnimalID")
     private int animalID;
 
     public Cat() {
     }
 
-    public Cat(String breed, int animalID) {
+    public Cat(int id, String breed, int animalID) {
+        this.id = id;
         this.breed = breed;
         this.animalID = animalID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBreed() {
         return breed;
     }
 
-    @XmlElement(name = "Breed")
     public void setBreed(String breed) {
         this.breed = breed;
     }
@@ -32,13 +42,16 @@ public class Cat {
         return animalID;
     }
 
-    @XmlElement(name = "AnimalID")
     public void setAnimalID(int animalID) {
         this.animalID = animalID;
     }
 
     @Override
     public String toString() {
-        return "Cat{" + "breed='" + breed + '\'' + ", animalID=" + animalID + '}';
+        return "Cat{" +
+                "id=" + id +
+                ", breed='" + breed + '\'' +
+                ", animalID=" + animalID +
+                '}';
     }
 }

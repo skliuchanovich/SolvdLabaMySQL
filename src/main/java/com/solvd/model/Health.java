@@ -1,15 +1,18 @@
 package com.solvd.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlRootElement(name = "Health")
-@XmlType(propOrder = {"checkUpDate", "healthStatus", "animalID"})
 public class Health {
 
+    @JsonProperty("Id")
+    private int id;
+    @JsonProperty("CheckUpDate")
     private String checkUpDate;
+
+    @JsonProperty("HealthStatus")
     private String healthStatus;
+
+    @JsonProperty("AnimalID")
     private int animalID;
 
     public Health() {
@@ -25,7 +28,6 @@ public class Health {
         return checkUpDate;
     }
 
-    @XmlElement(name = "CheckUpDate")
     public void setCheckUpDate(String checkUpDate) {
         this.checkUpDate = checkUpDate;
     }
@@ -34,7 +36,6 @@ public class Health {
         return healthStatus;
     }
 
-    @XmlElement(name = "HealthStatus")
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -43,13 +44,16 @@ public class Health {
         return animalID;
     }
 
-    @XmlElement(name = "AnimalID")
     public void setAnimalID(int animalID) {
         this.animalID = animalID;
     }
 
     @Override
     public String toString() {
-        return "Health{" + ", checkUpDate='" + checkUpDate + '\'' + ", healthStatus='" + healthStatus + '\'' + ", animalID=" + animalID + '}';
+        return "Health{" +
+                "checkUpDate='" + checkUpDate + '\'' +
+                ", healthStatus='" + healthStatus + '\'' +
+                ", animalID=" + animalID +
+                '}';
     }
 }

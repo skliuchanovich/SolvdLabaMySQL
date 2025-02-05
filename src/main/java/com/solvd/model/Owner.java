@@ -1,15 +1,16 @@
 package com.solvd.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlRootElement(name = "Owner")
-@XmlType(propOrder = {"id", "name", "contactInfo"})
 public class Owner {
 
+    @JsonProperty("Id")
     private int id;
+
+    @JsonProperty("Name")
     private String name;
+
+    @JsonProperty("ContactInfo")
     private String contactInfo;
 
     public Owner() {
@@ -25,7 +26,6 @@ public class Owner {
         return id;
     }
 
-    @XmlElement(name = "Id")
     public void setId(int id) {
         this.id = id;
     }
@@ -34,7 +34,6 @@ public class Owner {
         return name;
     }
 
-    @XmlElement(name = "Name")
     public void setName(String name) {
         this.name = name;
     }
@@ -43,13 +42,16 @@ public class Owner {
         return contactInfo;
     }
 
-    @XmlElement(name = "ContactInfo")
     public void setContactInfo(String contactInfo) {
         this.contactInfo = contactInfo;
     }
 
     @Override
     public String toString() {
-        return "Owner{" + "id=" + id + ", name='" + name + '\'' + ", contactInfo='" + contactInfo + '\'' + '}';
+        return "Owner{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", contactInfo='" + contactInfo + '\'' +
+                '}';
     }
 }
