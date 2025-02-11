@@ -1,9 +1,8 @@
 package com.solvd;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.solvd.model.Animals;
-
-import java.io.File;
+import com.solvd.dao.IAnimalDAO;
+import com.solvd.dao.mybatis.AnimalDAO;
+import com.solvd.service.AnimalService;
 
 public class Main {
 
@@ -11,9 +10,9 @@ public class Main {
 
         try {
 
-            ObjectMapper mapper = new ObjectMapper();
-            Animals animals = mapper.readValue(new File("src/main/resources/animals.json"), Animals.class);
-            animals.getAnimals().forEach(animal -> System.out.println(animal));
+            IAnimalDAO animalDAO = AnimalService.getSelectedAnimal();
+            System.out.println(animalDAO.getEntityByID(2));
+
         } catch (Exception e) {
             e.printStackTrace();
         }

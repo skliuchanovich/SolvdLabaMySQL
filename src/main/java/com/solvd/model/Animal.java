@@ -32,7 +32,8 @@ public class Animal {
     @JsonProperty("Cat")
     private Cat cat;
 
-    public Animal() { }
+    public Animal() {
+    }
 
     public Animal(int id, int age, String name, String color, Date birthDate, Health health, Owner owner, Diet diet, Cat cat) {
         this.id = id;
@@ -45,6 +46,14 @@ public class Animal {
         this.diet = diet;
         this.cat = cat;
     }
+
+    public Animal(int id, int age, String name, String color) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
+        this.color = color;
+    }
+
 
     public int getId() {
         return id;
