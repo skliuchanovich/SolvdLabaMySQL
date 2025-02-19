@@ -1,20 +1,18 @@
 package com.solvd;
 
-import com.solvd.dao.IAnimalDAO;
-import com.solvd.dao.mybatis.AnimalDAO;
-import com.solvd.service.AnimalService;
+import com.solvd.decorator.SoundDecorator;
+import com.solvd.factory.FactoryProvider;
+import com.solvd.factory.IAnimalFactory;
+import com.solvd.model.Animal;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        try {
-
-            IAnimalDAO animalDAO = AnimalService.getSelectedAnimal();
-            System.out.println(animalDAO.getEntityByID(2));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        IAnimalFactory factory = FactoryProvider.getFactory("Cat");
+        Animal cat = factory.createAnimal();
+        SoundDecorator soundDecorator = new SoundDecorator();
+        soundDecorator.decorate(cat);
+        System.out.println(cat);
     }
 }

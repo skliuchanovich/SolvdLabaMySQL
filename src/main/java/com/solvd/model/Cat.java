@@ -2,7 +2,7 @@ package com.solvd.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Cat {
+public class Cat extends Animal{
 
     @JsonProperty("Id")
     private int id;
